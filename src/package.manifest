@@ -9,6 +9,7 @@
 		}
 	],
 	"javascript": [
-		"/App_Plugins/NewsListBlock/NewsListBlock.Controller.js"
+		"/App_Plugins/NewsListBlock/NewsListBlock.Controller.js",
+		"/App_Plugins/NewsListBlock/NewsListBlock.Resources.js"
 	]
 }
