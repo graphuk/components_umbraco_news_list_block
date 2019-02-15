@@ -1,0 +1,16 @@
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<Graph.Components.NewsListBlock.NewsListBlockModel>
+<div class="news-list__items">
+	@foreach (var item in Model.News)
+	{
+		<div class="news-list__item">
+			<div class="news-list__item-picture">
+				<img src="@item.Image">
+			</div>
+			<p class="news-list__item-date">@item.Date.ToString("dd MMM yyyy")</p>
+			<h3 class="news-list__item-title">
+				<a class="news-list__link" href="@item.Url">@item.Title</a>
+			</h3>
+			<div class="news-list__item-description">@item.Description</div>
+		</div>
+	}
+</div>

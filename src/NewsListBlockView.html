@@ -20,8 +20,8 @@
 									</umb-overlay>
 								</div>
 								<div>
-									<div ng-show="control.value.dataSource.length > 0">
-										<div ng-repeat="item in control.value.dataSource">
+									<div ng-show="control.value.dataSources.length > 0">
+										<div ng-repeat="item in control.value.dataSources">
 											<i class="icon {{item.icon}}"></i> {{item.name}}
 											<a href="#" prevent-default ng-click="remove($index)"><i class="icon icon-delete red"></i></a>
 										</div>

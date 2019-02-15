@@ -1,7 +1,7 @@
 angular.module("umbraco").controller("NewsListBlock.Controller", function($scope, dialogService, newsListBlockConfig) {
 
 	function Item() {
-		this.dataSource = [];
+		this.dataSources = [];
 	}
 
 	$scope.control.value = $scope.control.value || new Item();
@@ -21,13 +21,13 @@ angular.module("umbraco").controller("NewsListBlock.Controller", function($scope
 			multiPicker: true,
 			callback: function (data) {
 				if (data) {
-					$scope.control.value.dataSource = data;
+					$scope.control.value.dataSources = data;
 				}
 			}
 		});
 	}
 
 	$scope.remove = function(index) {
-		$scope.control.value.dataSource.splice(index, 1);
+		$scope.control.value.dataSources.splice(index, 1);
 	};
 });

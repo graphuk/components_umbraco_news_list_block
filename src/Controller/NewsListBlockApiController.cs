@@ -10,7 +10,7 @@ namespace Graph.Components.NewsListBlock
 		{
 			return new EditorConfig
 			{
-				NewsListAlias = NewsListBlockConfig.NewsListAlias
+				NewsListAlias = NewsListBlockConfig.NewsListPageAlias
 			};
 		}
 	}
