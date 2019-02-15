@@ -4,5 +4,6 @@ namespace Graph.Components.NewsListBlock
 	public class NewsListBlockModel
 	{
 		public IEnumerable<NewsListItem> News { get; set; }
+		public PageNavigationModel PageNavigationModel { get; set; }
 	}
 }
