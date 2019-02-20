@@ -2,12 +2,12 @@ namespace Graph.Components.NewsListBlock
 {
 	public static class NewsListBlockConfig
 	{
-		public static string NewsListPageAlias => "NewsListPage";
-		public static string NewsPageAlias => "NewsPage";
-		public static string Title => "title";
-		public static string Description => "Summary";
-		public static string Date => "date";
-		public static string Image => "image";
-		public static int PageSize => 20;
+		public const string NewsListPageAlias = "NewsListPage";
+		public const string NewsPageAlias = "NewsPage";
+		public const string Title = "title";
+		public const string Description = "Summary";
+		public const string Date = "date";
+		public const string Image = "image";
+		public const int PageSize = 20;
 	}
 }
