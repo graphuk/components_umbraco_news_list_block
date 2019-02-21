@@ -1,0 +1,5 @@
+{
+	"name": "NewsListBlock",
+	"destination": "App_Plugins",
+	"addToCsproj": true
+}

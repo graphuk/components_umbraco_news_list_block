@@ -1,0 +1,15 @@
+{
+	"gridEditors": [
+		{
+			"name": "News List Data",
+			"alias": "newsListBlock",
+			"view": "/App_Plugins/NewsListBlock/NewsListBlockView.html",
+			"render": "/App_Plugins/NewsListBlock/Views/NewsListBlockRender.cshtml",
+			"icon": "icon-list"
+		}
+	],
+	"javascript": [
+		"/App_Plugins/NewsListBlock/NewsListBlock.Controller.js",
+		"/App_Plugins/NewsListBlock/NewsListBlock.Resources.js"
+	]
+}
