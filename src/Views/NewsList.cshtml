@@ -2,21 +2,31 @@
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<Graph.Components.NewsListBlock.NewsListBlockModel>
 
 <div class="news-list">
-	<div class="news-list__items">
+	<div class="news-list__container">
+		<div class="news-list__items">
 		@foreach (var item in Model.News)
 		{
-			<div class="news-list__item">
-				<div class="news-list__item-picture">
-					<img src="@item.Image">
+			<div class="news-item">
+				<div class="news-item__image-container">
+					@if (item.Image != null) {
+						<div class="news-item__media">
+								<img class="news-item__img" src="@item.Image">
+						</div>
+					}
 				</div>
-				<p class="news-list__item-date">@item.Date.ToString("dd MMM yyyy")</p>
-				<h3 class="news-list__item-title">
-					<a class="news-list__link" href="@item.Url">@item.Title</a>
-				</h3>
-				<div class="news-list__item-description">@item.Description</div>
+				<div class="news-item__content">
+					<h3 class="news-item__title">
+						<a class="news-item__link" href="@item.Url">@item.Title</a>
+					</h3>
+					<div class="news-item__description">@item.Description</div>
+					<time class="news-item__date">@item.Date.ToString("dd MMM yyyy")</time>
+				</div>
 			</div>
 		}
+		</div>
+		<div class="news-list__navigation">
+			@Html.Partial("/App_Plugins/NewsListBlock/Views/NewsListNavigation.cshtml", Model.PageNavigationModel)
+		</div>
 	</div>
 </div>
 
-@Html.Partial("/App_Plugins/NewsListBlock/Views/NewsListNavigation.cshtml", Model.PageNavigationModel)
