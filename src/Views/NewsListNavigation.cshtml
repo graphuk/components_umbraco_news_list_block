@@ -13,42 +13,34 @@
 	}
 
 }
-<div class="news-list__navigation">
-	<p class="news-list__navigation-label">Showing @(Model.CurrentPage == 1 ? 1 : itemsCount * (Model.CurrentPage - 1) + 1) - @(pageCount < itemsCount * Model.CurrentPage ? pageCount : itemsCount * Model.CurrentPage) from @Model.ItemsAmount news</p>
+
+<div class="pagination">
 	@if (Model.HasPrevPage)
 	{
-		<div class="news-list__navigation-prev">
-			<a class="news-list__navigation-link" href="@GetUrl(Model.CurrentPage - 1)" title="Prev">
-				Prev Page @(Model.CurrentPage - 1)
-			</a>
-		</div>
+		<a href="@GetUrl(Model.CurrentPage - 1)" class="pagination__item"><</a>
 	}
-	@if (Model.HasNextPage)
+
+	@foreach (var p in Model.Pages)
 	{
-		<div class="news-list__navigation-next">
-			<a class="news-list__navigation-link" href="@GetUrl(Model.CurrentPage + 1)" title="Next">
-				Next Page @(Model.CurrentPage + 1)
-			</a>
-		</div>
-	}
-	<div class="news-list__navigation-pages">
-		@foreach (var p in Model.Pages)
+		if (p.PageId == Model.CurrentPage)
 		{
-			if (p.PageId == Model.CurrentPage)
+			<span class="pagination__item pagination__item_active">@p.PageId</span>
+		}
+		else
+		{
+			if (p.PageId == 0)
 			{
-				<span class="news-list__navigation-current-page">@p.PageId</span>
+				<span class="pagination__dots">...</span>
 			}
 			else
 			{
-				if (p.PageId == 0)
-				{
-					<span class="news-list__navigation-dots">...</span>
-				}
-				else
-				{
-					<a class="news-list__navigation-page-item" href="@GetUrl(p.PageId)">@p.PageId</a>
-				}
+				<a class="pagination__item" href="@GetUrl(p.PageId)">@p.PageId</a>
 			}
 		}
-	</div>
+	}
+
+	@if (Model.HasNextPage)
+	{
+		<a href="@GetUrl(Model.CurrentPage + 1)" class="pagination__item pagination__item_next">></a>
+	}
 </div>

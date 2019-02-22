@@ -8,6 +8,6 @@ namespace Graph.Components.NewsListBlock
 		public const string Description = "Summary";
 		public const string Date = "date";
 		public const string Image = "image";
-		public const int PageSize = 20;
+		public const int PageSize = 10;
 	}
 }
